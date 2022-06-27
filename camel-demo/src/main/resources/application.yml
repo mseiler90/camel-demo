@@ -1,0 +1,12 @@
+spring:
+  profiles:
+    active: local
+
+service-bus:
+    queue-name: "test-queue" #or whatever queue name you want to test with
+
+camel:
+  component:
+    azure-servicebus:
+      amqp-transport-type: amqp_web_sockets #may need this depending on your company network rules
+      connection-string: "<service bus connection string>" #we actually use managed identities in our production code, but for quick local testing this is easier
